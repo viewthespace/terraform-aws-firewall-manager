@@ -43,7 +43,7 @@ resource "aws_fms_policy" "waf_v2" {
       loggingConfiguration                    = lookup(each.value.policy_data, "logging_configuration", local.logging_configuration)
       customRequestHandling                   = lookup(each.value.policy_data, "custom_request_handling", null)
       customResponse                          = lookup(each.value.policy_data, "custom_response", null)
-      sampledRequestsEnabledForDefaultActions = lookup(each.value.policy_data, "sampled_requests_enabled_for_default_actions", false)
+      sampledRequestsEnabledForDefaultActions = lookup(each.value.policy_data, "sampled_requests_enabled_for_default_actions", true)
     })
   }
 }
